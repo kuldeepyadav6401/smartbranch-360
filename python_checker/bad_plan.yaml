@@ -1,0 +1,16 @@
+# Intentionally WRONG plan - use this to demo the checker catching errors.
+site: SmartBranch360
+required_vlans: [10, 20, 30, 99]
+vlans:
+  - id: 10
+    name: EMPLOYEES
+    subnet: 10.10.10.0/24
+    gateway: 10.10.10.1
+  - id: 10
+    name: GUESTS
+    subnet: 10.10.10.0/24
+    gateway: 10.10.99.1
+  - id: 30
+    name: SERVER
+    subnet: 10.10.30.0/24
+    gateway: 10.10.30.1

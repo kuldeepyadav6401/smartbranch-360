@@ -1,0 +1,32 @@
+# SmartBranch 360 - source of truth for VLANs and IP subnets
+# The Python checker reads this file and reports plan mistakes.
+
+site: SmartBranch360
+
+required_vlans: [10, 20, 30, 99]
+
+vlans:
+  - id: 10
+    name: EMPLOYEES
+    subnet: 10.10.10.0/24
+    gateway: 10.10.10.1
+  - id: 20
+    name: GUESTS
+    subnet: 10.10.20.0/24
+    gateway: 10.10.20.1
+  - id: 30
+    name: SERVER
+    subnet: 10.10.30.0/24
+    gateway: 10.10.30.1
+  - id: 99
+    name: MGMT
+    subnet: 10.10.99.0/24
+    gateway: 10.10.99.1
+
+devices:
+  - name: SRV1
+    vlan: 30
+    ip: 10.10.30.10
+  - name: PC-M1
+    vlan: 99
+    ip: 10.10.99.10
